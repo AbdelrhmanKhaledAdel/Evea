@@ -1,0 +1,20 @@
+
+button {
+  background: #5d87ff !important;
+  transition: .3s !important;
+  text-transform: capitalize !important;
+  font-size: 1rem !important;
+  line-height: 1.5rem !important;
+  &:hover {
+    background: #2a5ceb !important;
+  }
+  &.outline {
+    background: transparent !important;
+    border: 1px solid #fff;
+    color: #fff;
+    &:hover {
+      background: #fff !important;
+      color: #5d87ff;
+    }
+  }
+}

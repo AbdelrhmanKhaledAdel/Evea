@@ -1,0 +1,62 @@
+// Import sass File
+@use "./sass/helpers/mixins" as *;
+
+@use "./sass/helpers/variables" as * ;
+
+@use "./sass/layout/header";
+
+@use "./sass/layout/footer";
+
+@use "./sass/pages/homepage";
+
+@use "./SASS/components/button";
+
+// Import Fonts
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
+/* Custom Scroll Bar */
+html {
+  &::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $main_color !important;
+    border-radius: 5rem;
+  }
+}
+body  {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box ;
+  font-family: "Cairo", system-ui ;
+}
+ul {
+  list-style: none;
+  padding: 0 !important;
+}
+a {
+  text-decoration: none;
+}
+
+.arrow_up {
+  color: white;
+  border-radius: 4px;
+  position: fixed;
+  z-index: 4;
+  cursor: pointer;
+  transition: $transition;
+  right: -100px;
+  bottom: 4%;
+  background-color: $main_color;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &.active {
+    bottom: 20px;
+    right: 20px;
+  }
+}

@@ -1,0 +1,66 @@
+@use "../helpers/variables" as * ;
+footer {
+  background: #17243a;
+  P {
+    color: #d1d5db;
+  }
+  .items {
+    padding: 4rem 0;
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 15px;
+      @media #{$minLarge} {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      }
+      @media #{$minSmall} {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      }
+    }
+    .item {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      .logo img {
+        height: 2.25rem;
+      }
+      a {
+        color: #d1d5db;
+        transition: $transition;
+        &:hover {
+          color: #9ca3af;
+        }
+      }
+      h4 {
+        color: #f3f4f6;
+        text-transform: uppercase;
+        font: {
+          weight: 700;
+          size: 1rem;
+        }
+      }
+    }
+  }
+  .copyright {
+    padding: 1rem;
+    background-color: #1c2940;
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      ul.links {
+        display: flex;
+        gap: 1rem;
+        li {
+          color: #fff;
+          cursor: pointer;
+          transition: $transition;
+          &:hover {
+            color: $main_color;
+          }
+        }
+      }
+    }
+  }
+
+}

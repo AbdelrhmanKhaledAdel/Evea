@@ -1,0 +1,87 @@
+@use "./sass/helpers/variables" as * ;
+
+header {
+  position: fixed;
+  background: transparent;
+  padding: 1.25rem 0;
+  width: 100%;
+  z-index: 100;
+  @media #{$maxSmall} {
+     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    background-color: #fff;
+  }
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media #{$maxSmall} {
+      flex-direction: column;
+    }
+    .logo {
+      @media #{$maxSmall} {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+      }
+      img {
+        height:2.25rem;
+      }
+      .menu {
+        display: none;
+        cursor: pointer;
+        @media #{$maxSmall} {
+          display: block;
+        }
+      }
+    }
+    .mobil {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: $transition;
+      width: 80%;
+      @media #{$maxSmall} {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 2rem;
+        align-items: normal;
+        display: none;
+      }
+      ul.links {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin: 0;
+        li {
+          padding: 5px 7px;
+          a {
+            color: #000000b3;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: $transition;
+            &:hover {
+              color: $main_color;
+            }
+          }
+        }
+      }
+      &.open {
+        display: flex;
+        ul.links {
+          @media #{$maxSmall} {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 2rem;
+          }
+        }
+      }
+    }
+  }
+  &.scroll {
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    background-color: #fff;
+    transition: $transition;
+  }
+}
